@@ -26,6 +26,7 @@ public class ClientPage extends JDialog {
     private JButton btnRequestLoan = new JButton("Request Loan");
     private JButton btnPayLoan = new JButton("Pay Loan");
     private JButton btnViewTransactions = new JButton("View Transactions");
+    private JButton btnCloseAccount = new JButton("Close Account");
 
     public ClientPage(Account account) {
         setTitle("My Page");
@@ -77,6 +78,7 @@ public class ClientPage extends JDialog {
         pnlBottom.add(btnRequestLoan);
         pnlBottom.add(btnPayLoan);
         pnlBottom.add(btnViewTransactions);
+        pnlBottom.add(btnCloseAccount);
         c.add(pnlTop, BorderLayout.NORTH);
         c.add(pnlMain);
         c.add(pnlBottom, BorderLayout.SOUTH);
@@ -88,5 +90,6 @@ public class ClientPage extends JDialog {
         RequestLoanController RLC = new RequestLoanController(dg,btnRequestLoan, account);
         PayLoanController PLC = new PayLoanController(dg,btnPayLoan, account);
         TransferMoneyController TMC = new TransferMoneyController(dg,btnMoneyTransfer,account);
+        CloseAccountController CAC = new CloseAccountController(dg,btnCloseAccount,account);
     }
 }
